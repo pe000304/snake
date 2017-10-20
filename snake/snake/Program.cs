@@ -18,7 +18,10 @@ namespace snake
 
             horizontial_lines line = new horizontial_lines(5, 10, 8, '+');
             line.Draw();
-            
+
+            vertical_lines vertical = new vertical_lines(12, 12, 3, '*');
+            line.Draw();
+
             Console.ReadKey();
         }
                

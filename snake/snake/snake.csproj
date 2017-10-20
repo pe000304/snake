@@ -46,6 +46,7 @@
     <Compile Include="point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vertical_lines.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
