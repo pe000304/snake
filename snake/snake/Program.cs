@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
+
 
 namespace snake
 {
@@ -31,8 +33,19 @@ namespace snake
             point p1 = new point(4, 5, '*');
             //p1.Draw();
             snake snake = new snake(p1, 4, Direction.RIGHT);
+
             snake.Draw();
+
+            for(int i = 0; i < 3000; i=i+150)
+            {
+                snake.Move();
+                Thread.Sleep(i);
+            }
             
+            
+            
+
+
             Console.ReadKey();
         }
                
