@@ -14,12 +14,6 @@ namespace snake
         {
             Console.SetBufferSize(80, 25);
 
-            //point p1 = new point(1, 3, '*');
-            //p1.Draw();
-            
-            //point p2 = new point(4, 5, '#');
-            //p2.Draw();
-
             horizontial_lines up_line   = new horizontial_lines(0, 78, 0, '+');
             horizontial_lines down_line = new horizontial_lines(0, 78, 23, '+');
             vertical_lines left_line    = new vertical_lines(0, 23, 0, '+');
@@ -31,21 +25,20 @@ namespace snake
             right_line.Draw();
 
             point p1 = new point(4, 5, '*');
-            //p1.Draw();
             snake snake = new snake(p1, 4, Direction.RIGHT);
 
             snake.Draw();
 
-            for(int i = 0; i < 3000; i=i+150)
+            for(;;)
             {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HandKey(key.Key);
+                }
+                Thread.Sleep(100);
                 snake.Move();
-                Thread.Sleep(i);
             }
-            
-            
-            
-
-
             Console.ReadKey();
         }
                
